@@ -30,7 +30,7 @@ public class ChallengeJavaDay01_mHaniff {
         //System.out.println(isNoDuplicateChar("dabced"));
 
         //Challenge isBrace
-        //System.out.println(isBrace("()()"));
+        System.out.println(isBrace("()()"));
 
     }
 
