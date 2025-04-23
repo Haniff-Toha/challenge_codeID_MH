@@ -13,10 +13,10 @@ public class challengeJavaDay02_mHaniff {
         displayArray(orderEvenBeforeOdd(myNums));*/
 
         /*=============== challenge matrix ==============*/
-        displayMatrix(matrixDiagonal1(5,5));
-        //displayMatrix(matrixDiagonal2(10,10));
+        //displayMatrix(matrixDiagonal1(5,5));
+        //displayMatrix(matrixDiagonal(10,10));
         //displayMatrix(matrixDiagonal3(7));
-        //displayMatrix(matrixDiagonal4(7));
+        displayMatrix(matrixDiagonal4(8));
 
     }
     public static void displayArray(int[] arr){
@@ -203,15 +203,17 @@ public class challengeJavaDay02_mHaniff {
 
     public static int[][] matrixDiagonal4(int n){
         int[][] matrix = new int[n][n];
-        //int sum = 0;
-        for (int row = 0; row < matrix.length; row++) {
-
-            for (int col = 0; col < matrix[row].length; col++) {
+        int sum = 0;
+        for (int row = 0; row < matrix.length-1; row++) {
+            for (int col = 0; col < matrix[row].length-1; col++) {
                 matrix[row][col] = row + col;
-                matrix[row][n-1] += matrix[row][col];;
-                matrix[n-1][col] += matrix[row][col];;
+                matrix[row][n-1] += matrix[row][col];
+                matrix[n-1][row] += matrix[row][col];
+                
+                sum += matrix[row][col]; //untuk mengambil total pojok kanan bawah
             }
         }
+        matrix[n - 1][n - 1] = sum; // pojok kanan bawah (total keseluruhan)
         return matrix;
     }
 }
