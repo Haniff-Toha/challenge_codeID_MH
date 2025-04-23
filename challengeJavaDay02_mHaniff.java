@@ -9,14 +9,14 @@ public class challengeJavaDay02_mHaniff {
         //String[] myString = {"true","false","false"};
         //System.out.println(isPalindromString(myString));
 
-        /*int [] myNums = {3,4,5,2,10};
-        displayArray(orderEvenBeforeOdd(myNums));*/
+        int [] myNums = {3,4,5,2,10};
+        displayArray(orderEvenBeforeOdd(myNums));
 
         /*=============== challenge matrix ==============*/
         //displayMatrix(matrixDiagonal1(5,5));
         //displayMatrix(matrixDiagonal(10,10));
         //displayMatrix(matrixDiagonal3(7));
-        displayMatrix(matrixDiagonal4(8));
+        //displayMatrix(matrixDiagonal4(8));
 
     }
     public static void displayArray(int[] arr){
@@ -131,7 +131,7 @@ public class challengeJavaDay02_mHaniff {
         }
 
         // Sort the odd numbers (from left to arr.length-1) using Bubble Sort
-        for (int i = left; i < arr.length - 1; i++) {
+        for (int i = 0; i < arr.length - 1; i++) {
             for (int j = left; j < arr.length - i - 1; j++) {
                 if (arr[j] > arr[j + 1]) {
                     // Swap if the element is greater than the next one
@@ -209,7 +209,7 @@ public class challengeJavaDay02_mHaniff {
                 matrix[row][col] = row + col;
                 matrix[row][n-1] += matrix[row][col];
                 matrix[n-1][row] += matrix[row][col];
-                
+
                 sum += matrix[row][col]; //untuk mengambil total pojok kanan bawah
             }
         }
