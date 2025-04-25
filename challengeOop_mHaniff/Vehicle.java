@@ -2,7 +2,7 @@ package day03.challengeOop_mHaniff;
 
 import java.time.LocalDate;
 
-public class VehiclePurchase {
+public class Vehicle {
        private String noPolice;
        private VehicleType vehicleType;
        private int year;
@@ -15,7 +15,7 @@ public class VehiclePurchase {
        public static int totalBoat;
        public static int totalPlane;
 
-    public VehiclePurchase(String noPolice, VehicleType vehicleType, int year, double price, double tax, int seat, LocalDate transactionDate) {
+    public Vehicle(String noPolice, VehicleType vehicleType, int year, double price, double tax, int seat, LocalDate transactionDate) {
         this.noPolice = noPolice;
         this.vehicleType = vehicleType;
         this.year = year;
@@ -90,7 +90,7 @@ public class VehiclePurchase {
     }
 
     public static void setTotalCar(int totalCar) {
-        VehiclePurchase.totalCar = totalCar;
+        Vehicle.totalCar = totalCar;
     }
 
     public static int getTotalBoat() {
@@ -98,7 +98,7 @@ public class VehiclePurchase {
     }
 
     public static void setTotalBoat(int totalBoat) {
-        VehiclePurchase.totalBoat = totalBoat;
+        Vehicle.totalBoat = totalBoat;
     }
 
     public static int getTotalPlane() {
@@ -106,7 +106,7 @@ public class VehiclePurchase {
     }
 
     public static void setTotalPlane(int totalPlane) {
-        VehiclePurchase.totalPlane = totalPlane;
+        Vehicle.totalPlane = totalPlane;
     }
 
     public double getTotal() {

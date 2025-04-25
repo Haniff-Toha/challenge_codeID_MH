@@ -2,7 +2,7 @@ package day03.challengeOop_mHaniff;
 
 import java.time.LocalDate;
 
-public class Plane extends VehiclePurchase {
+public class Plane extends Vehicle {
     private double orderPerHours;
 
     public double getOrderPerHours() {
