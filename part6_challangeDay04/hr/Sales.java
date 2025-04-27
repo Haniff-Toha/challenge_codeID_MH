@@ -1,8 +1,8 @@
-package day03.part6.hr;
+package day03.part6_challangeDay04.hr;
 
-import day03.part6.ISalary;
-import day03.part6.salary.Commission;
-import day03.part6.salary.Overtime;
+import day03.part6_challangeDay04.ISalary;
+import day03.part6_challangeDay04.salary.Commission;
+import day03.part6_challangeDay04.salary.Overtime;
 
 import java.time.LocalDate;
 

@@ -1,7 +1,6 @@
-package day03.part6;
+package day03.part6_challangeDay04;
 
-import day03.part6.hr.Employee;
-import day03.part6.hr.Programmer;
+import day03.part6_challangeDay04.hr.Employee;
 
 import java.util.List;
 

@@ -1,9 +1,9 @@
-package day03.part6;
+package day03.part6_challangeDay04;
 
-import day03.part6.hr.*;
-import day03.part6.salary.Commission;
-import day03.part6.salary.Overtime;
-import day03.part6.salary.Transportasi;
+import day03.part6_challangeDay04.hr.*;
+import day03.part6_challangeDay04.salary.Commission;
+import day03.part6_challangeDay04.salary.Overtime;
+import day03.part6_challangeDay04.salary.Transportasi;
 
 import java.time.LocalDate;
 import java.util.ArrayList;

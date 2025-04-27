@@ -1,9 +1,4 @@
-package day03.part6;
-
-import day03.part6.hr.Programmer;
-
-import java.util.List;
-import java.util.stream.Collectors;
+package day03.part6_challangeDay04;
 
 public class Main {
     public static void main(String[] args) {

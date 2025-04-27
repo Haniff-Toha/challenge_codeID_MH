@@ -1,4 +1,4 @@
-package day03.part6.salary;
+package day03.part6_challangeDay04.salary;
 
 import java.time.LocalDate;
 
