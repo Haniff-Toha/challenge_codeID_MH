@@ -87,7 +87,7 @@ public class HRServiceImpl implements HRService{
         System.out.println("Total Salary       : Rp " + totalSalary);
         System.out.println("Total Insurance    : Rp " + totalInsurance);
         System.out.println("Total Overtime     : Rp " + totalOvertime);
-        System.out.println("Total Allowance    : Rp " + totalOperational);
+        System.out.println("Total Operational  : Rp " + totalOperational);
         System.out.println("Total Tax          : Rp " + totalTax);
         System.out.println("=====================");
     }
