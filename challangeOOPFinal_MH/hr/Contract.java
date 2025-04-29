@@ -1,6 +1,6 @@
 package challangeOOPFinal_MH.hr;
 
-import challangeOOPFinal_MH.Tax.Tax;
+import challangeOOPFinal_MH.tax.Tax;
 import challangeOOPFinal_MH.allowances.AllowanceService;
 import challangeOOPFinal_MH.allowances.Insurance;
 import challangeOOPFinal_MH.allowances.Operational;
@@ -83,5 +83,15 @@ public class Contract extends Employee implements AllowanceService {
                 tax +
                 " totalTax= " + getTotalTax() +
                 '}';
+    }
+
+    @Override
+    public void calcPph() {
+
+    }
+
+    @Override
+    public void calcTapera() {
+
     }
 }

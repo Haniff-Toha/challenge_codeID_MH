@@ -1,11 +1,13 @@
 package challangeOOPFinal_MH.allowances;
 
+import java.time.LocalDate;
+
 public class Overtime extends Allowance{
     private double overtime;
     private double hours;
 
     public Overtime(/*double totalAllowance,*/ double overtime, double hour) {
-        //super(totalAllowance);
+        super(LocalDate.now());
         this.overtime = overtime;
         this.hours = hour;
         //this.totalOvertime = totalOvertime;

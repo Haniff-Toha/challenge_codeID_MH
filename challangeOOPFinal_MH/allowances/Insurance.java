@@ -1,5 +1,7 @@
 package challangeOOPFinal_MH.allowances;
 
+import java.time.LocalDate;
+
 public class Insurance extends Allowance{
     private int self;
     private int dependent;
@@ -7,7 +9,7 @@ public class Insurance extends Allowance{
     //private double totalInsurance;
 
     public Insurance(int self, int dependent, double medical) {
-        //super(totalAllowance);
+        super(LocalDate.now());
         this.self = self;
         this.dependent = dependent;
         this.medical = medical;

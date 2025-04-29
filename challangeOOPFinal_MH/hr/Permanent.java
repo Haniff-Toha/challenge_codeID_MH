@@ -1,14 +1,14 @@
 package challangeOOPFinal_MH.hr;
 
-import challangeOOPFinal_MH.Tax.Tax;
-import challangeOOPFinal_MH.Tax.TaxSalary;
+import challangeOOPFinal_MH.tax.Tax;
+import challangeOOPFinal_MH.allowances.AllowanceService;
 import challangeOOPFinal_MH.allowances.Insurance;
 import challangeOOPFinal_MH.allowances.Operational;
 import challangeOOPFinal_MH.allowances.Overtime;
 
 import java.time.LocalDate;
 
-public class Permanent extends Employee implements TaxSalary {
+public class Permanent extends Employee implements AllowanceService {
     private Insurance insurance;
     private Overtime overtime;
     private Operational operational;
@@ -73,7 +73,8 @@ public class Permanent extends Employee implements TaxSalary {
 
     @Override
     public void calcPph() {
-
+        int pphDibayarkan=0;
+        System.out.println(pphDibayarkan = (int) (getSalary() * tax.getPph()));
     }
 
     @Override

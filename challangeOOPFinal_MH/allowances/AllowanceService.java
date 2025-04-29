@@ -1,6 +1,8 @@
 package challangeOOPFinal_MH.allowances;
 
-public interface AllowanceService {
+import challangeOOPFinal_MH.tax.TaxSalary;
+
+public interface AllowanceService extends TaxSalary {
 
     public void calcTotalOvertime();
     public void calcTotalOperational();

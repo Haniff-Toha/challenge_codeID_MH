@@ -1,6 +1,6 @@
 package challangeOOPFinal_MH;
 
-import challangeOOPFinal_MH.Tax.Tax;
+import challangeOOPFinal_MH.tax.Tax;
 import challangeOOPFinal_MH.allowances.Insurance;
 import challangeOOPFinal_MH.allowances.Operational;
 import challangeOOPFinal_MH.allowances.Overtime;
@@ -23,24 +23,40 @@ public class HRServiceImpl implements HRService{
                 new Operational(2, 30_000, 20_000),
                 new Tax(LocalDate.now(),0.005, 0.005));
 
-        Contract emp2 = new Contract(102, "Charlie", LocalDate.of(2022,2,4),
+        Permanent emp2 = new Permanent(101,"Budi", LocalDate.of(2021,4,2),
+                15_000_000,
+                new Insurance(1, 3, 0.02),
+                new Overtime(50_000, 0),
+                new Operational(0, 0, 0),
+                new Tax(LocalDate.now(),0.005, 0.005));
+
+        Contract emp3 = new Contract(102, "Charlie", LocalDate.of(2022,2,4),
                 15_000_000,
                 new Insurance(1,0,0.02),
                 new Overtime(45_000,5),
                 new Operational(0,0,0),
                 new Tax(LocalDate.now(),0.005,0.005));
 
-        Trainee emp3 = new Trainee(104,"Gita", LocalDate.of(2024,2,4),
+        Contract emp4 = new Contract(103, "Dian", LocalDate.of(2023,2,4),
+                10_000_000,
+                new Insurance(1,0,0.02),
+                new Overtime(45_000,6),
+                new Operational(0,0,0),
+                new Tax(LocalDate.now(),0.005,0.005));
+
+        Trainee emp5 = new Trainee(104,"Gita", LocalDate.of(2024,2,4),
                 0,
                 new Operational(25, 30_000,20_000));
 
-        Freelancer emp4 = new Freelancer(105, "Rima", LocalDate.of(2025,2,4),
+        Freelancer emp6 = new Freelancer(105, "Rima", LocalDate.of(2025,2,4),
                 0,25_000_000,0.025);
 
         employees.add(emp1);
         employees.add(emp2);
         employees.add(emp3);
         employees.add(emp4);
+        employees.add(emp5);
+        employees.add(emp6);
 
 
         return employees;
@@ -60,7 +76,7 @@ public class HRServiceImpl implements HRService{
 
             totalEmployee++;
             totalSalary += emp.getTotalSalary();
-            totalInsurance +=emp.getTotalInsurance();
+            totalInsurance += emp.getTotalInsurance();
             totalOvertime += emp.getTotalOvertime();
             totalOperational += emp.getTotalOperational();
             totalTax += emp.getTotalTax();
@@ -78,11 +94,21 @@ public class HRServiceImpl implements HRService{
 
     @Override
     public void getTotalEmployee(List<Employee> emps) {
-        int totalEmployee = emps.size();
+        int totalEmployee = 0;
+        for (Employee emp : emps){
+            totalEmployee++;
+        }
+        System.out.println(totalEmployee);
     }
 
     @Override
     public void getTotalEmployeeByType(List<Employee> emps, EmployeeType empType) {
-
+        int totalEmployee=0;
+        for (Employee emp : emps){
+            if (emp.getStatus() == empType) {
+                totalEmployee++;
+            }
+        }
+        System.out.println("Total" + empType + "= " + totalEmployee);
     }
 }

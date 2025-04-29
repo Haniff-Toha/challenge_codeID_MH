@@ -1,10 +1,11 @@
 package challangeOOPFinal_MH.hr;
 
+import challangeOOPFinal_MH.tax.TaxProject;
 import challangeOOPFinal_MH.allowances.AllowanceService;
 
 import java.time.LocalDate;
 
-public class Freelancer extends Employee implements AllowanceService, POService {
+public class Freelancer extends Employee implements AllowanceService, POService, TaxProject {
     private double po;
     private double ppn;
 
@@ -50,16 +51,32 @@ public class Freelancer extends Employee implements AllowanceService, POService 
     }
 
     @Override
-    public void totalPO() {
-
-    }
-
-    @Override
     public String toString() {
         return super.toString() +
                 " po=" + po +
                 ", ppn=" + ppn +
                 " totalTax=" + getTotalTax() +
                 '}';
+    }
+
+    @Override
+    public double totalPO() {
+        int totalPO=0;
+        return totalPO+= po;
+    }
+
+    @Override
+    public void calcppn() {
+
+    }
+
+    @Override
+    public void calcPph() {
+
+    }
+
+    @Override
+    public void calcTapera() {
+
     }
 }

@@ -46,4 +46,14 @@ public class Trainee extends Employee implements AllowanceService {
                 " operational=" + operational +
                 '}';
     }
+
+    @Override
+    public void calcPph() {
+
+    }
+
+    @Override
+    public void calcTapera() {
+
+    }
 }

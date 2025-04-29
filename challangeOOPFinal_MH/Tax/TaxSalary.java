@@ -1,8 +1,6 @@
-package challangeOOPFinal_MH.Tax;
+package challangeOOPFinal_MH.tax;
 
-import challangeOOPFinal_MH.allowances.AllowanceService;
-
-public interface TaxSalary extends  AllowanceService{
+public interface TaxSalary{
     public void calcPph();
     public void calcTapera();
 }

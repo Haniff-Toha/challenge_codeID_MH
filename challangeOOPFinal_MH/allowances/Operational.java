@@ -1,5 +1,7 @@
 package challangeOOPFinal_MH.allowances;
 
+import java.time.LocalDate;
+
 public class Operational extends Allowance{
     private int days;
     private double lunch;
@@ -7,7 +9,7 @@ public class Operational extends Allowance{
     private double totalOperational;
 
     public Operational(/*double totalAllowance,*/ int days, double lunch, double transport/*, double totalOperational*/) {
-        //super(totalAllowance);
+        super(LocalDate.now());
         this.days = days;
         this.lunch = lunch;
         this.transport = transport;

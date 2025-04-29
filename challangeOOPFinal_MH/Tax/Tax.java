@@ -1,10 +1,10 @@
-package challangeOOPFinal_MH.Tax;
+package challangeOOPFinal_MH.tax;
 
-import challangeOOPFinal_MH.allowances.Salary;
+import challangeOOPFinal_MH.allowances.Allowance;
 
 import java.time.LocalDate;
 
-public class Tax extends Salary {
+public class Tax extends Allowance {
     private double pph;
     private double tapera;
     //private double ppn;

@@ -1,8 +1,17 @@
 package challangeOOPFinal_MH.allowances;
 
+import java.time.LocalDate;
+
 public class Allowance {
     private double totalAllowance;
     private double po;
+    private LocalDate payDay;
+
+    public Allowance(LocalDate payDay/*, double po, double totalAllowance*/) {
+        this.payDay = payDay;
+        //this.po = po;
+        //this.totalAllowance = totalAllowance;
+    }
 
     public Allowance(/*double totalAllowance*/ /*, double po*/) {
         //this.totalAllowance = totalAllowance;
