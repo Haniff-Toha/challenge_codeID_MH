@@ -1,0 +1,74 @@
+@startuml
+skinparam classAttributeIconSize 0
+skinparam classFontSize 12
+skinparam classFontName Courier
+skinparam classBorderColor Black
+skinparam classBackgroundColor MintCream
+skinparam classArrowColor DimGray
+skinparam classAttributeFontColor Black
+
+' === Interfaces ===
+interface AllowanceService
+interface POService
+interface TaxProject
+interface SalaryService
+interface HRService
+
+' === Enum ===
+enum EmployeeType {
+  PERMANENT
+  CONTRACT
+  MAGANG
+  FREELANCE
+}
+
+' === Core Classes ===
+class Employee {
+  - name: String
+  - id: String
+  - baseSalary: double
+  - type: EmployeeType
+}
+
+class Permanent
+class Contract
+class Freelancer
+class Trainee
+
+' === Services & Utility Classes ===
+class EmployeeImpl
+class Allowance {
+  + static double calculateTransport()
+  + static double calculateMakan()
+  + static double calculateKesehatan()
+  + static double calculatePulsa()
+}
+
+' === Inheritance Relationships ===
+Employee <|-- Permanent
+Employee <|-- Contract
+Employee <|-- Freelancer
+Employee <|-- Trainee
+
+' === Interface Implementations ===
+Permanent ..|> AllowanceService
+Permanent ..|> SalaryService
+
+Contract ..|> AllowanceService
+Contract ..|> SalaryService
+
+Freelancer ..|> AllowanceService
+Freelancer ..|> SalaryService
+Freelancer ..|> POService
+Freelancer ..|> TaxProject
+
+Trainee ..|> AllowanceService
+Trainee ..|> SalaryService
+
+EmployeeImpl ..|> HRService
+
+' === Association / Usage ===
+EmployeeImpl --> Employee
+EmployeeImpl --> Allowance
+
+@enduml

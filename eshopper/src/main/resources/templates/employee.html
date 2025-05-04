@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:with="http://www.thymeleaf.org/extras/with" layout:decorate="~{main_layout}" with:title="index">
+<th:block layout:fragment="content">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Table</title>
+</head>
+<body>
+    <h3>Table Employee</h3>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>EmpId</th>
+                <th>FullName</th>
+                <th>HireDate</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="emps : ${employees}">
+                <td th:text="${emps.empId}"></td>
+                <td th:text="${emps.fullName}"></td>
+                <td th:text="${emps.hireDate}"></td>
+                <td th:text="${emps.salary}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

@@ -17,7 +17,7 @@ class SUV {
 class Taxi {
 }
 
-class PrivateLet {
+class PrivateJet {
 }
 
 class Boat {
@@ -37,7 +37,7 @@ class Income {
 
 Vehicle <|-- SUV
 Vehicle <|-- Taxi
-Vehicle <|-- PrivateLet
+Vehicle <|-- PrivateJet
 Vehicle <|-- Boat
 Vehicle "1" o-- "1" Income
 

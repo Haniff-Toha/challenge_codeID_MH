@@ -1,0 +1,40 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:with="http://www.thymeleaf.org/extras/with" layout:decorate="~{main_layout}" with:title="index">
+<th:block layout:fragment="content">
+    
+<head>
+    <meta charset="UTF-8">
+    <title>Products</title>
+</head>
+<body>
+    <h3>Products</h3>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Product ID</th>
+                <th>Product Name</th>
+                <th>Supplier ID</th>
+                <th>Category ID</th>
+                <th>Quantity Per Unit</th>
+                <th>Unit Price</th>
+                <!-- <th>Units in Stock</th>
+                <th>Units on Order</th>
+                <th>Reorder Level</th>
+                <th>Discontinued</th>
+                <th>Unit in Stock</th>
+                <th>Unit On Order</th> -->
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="prod : ${products}">
+                <td th:text="${prod.productId}"></td>
+                <td th:text="${prod.productName}"></td>
+                <td th:text="${prod.supplierId}"></td>
+                <td th:text="${prod.categoryId}"></td>
+                <td th:text="${prod.quantityPerUnit}"></td>
+                <td th:text="${prod.unitPrice}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,98 @@
+@startuml
+skinparam style strict
+skinparam class {
+  BackgroundColor #fef6e4
+  BorderColor #8b5e3c
+  ArrowColor #8b5e3c
+  FontColor #5d4037
+}
+
+package "day03.part6" {
+    interface IEmployee {
+        +initListEmployee(): List<Employee>
+        +displayEmployees(emps: List<Employee>)
+        +generateSalary(emps: List<Employee>)
+        +generateTax(emps: List<Employee>)
+    }
+
+    interface ISalary {
+        +calculateTotalSalary()
+        +calcTax()
+    }
+}
+
+package "day03.part6.hr" {
+    class Employee {
+        -empId: int
+        -fullName: String
+        -hireDate: LocalDate
+        -role: Roles
+        -salary: double
+        -totalSalary: double
+        -totalTax: double
+        +calculateTotalSalary()
+        +calcTax()
+    }
+
+    class Programmer {
+        -transport: Transportasi
+        -makan: Overtime
+        +calculateTotalSalary()
+        +calcTax()
+    }
+
+    class QA {
+        -makan: Overtime
+        +calculateTotalSalary()
+        +calcTax()
+    }
+
+    class Sales {
+        -makan: Overtime
+        -commission: Commission
+        +calculateTotalSalary()
+        +calcTax()
+    }
+
+    enum Roles {
+        PROGRAMMER
+        QA
+        SALES
+    }
+}
+
+package "day03.part6.salary" {
+    class Transportasi {
+        -bensin: double
+        -spj: double
+        -transportasi: double
+    }
+
+    class Overtime {
+        -makan: double
+    }
+
+    class Commission {
+        -bonus: double
+        -commission: double
+    }
+}
+
+EmployeeImpl --> IEmployee
+Employee --> ISalary
+Programmer --|> Employee
+Programmer --> ISalary
+QA --|> Employee
+QA --> ISalary
+Sales --|> Employee
+Sales --> ISalary
+
+Programmer --> Transportasi
+Programmer --> Overtime
+QA --> Overtime
+Sales --> Overtime
+Sales --> Commission
+
+Employee --> Roles
+
+@enduml

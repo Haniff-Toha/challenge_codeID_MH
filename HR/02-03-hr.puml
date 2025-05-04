@@ -70,6 +70,8 @@ class QA extends Employee{
 
 Main --> IEmployee
 EmployeeImpl --> Programmer
+EmployeeImpl --> Sales
+EmployeeImpl --> QA
 
 Commission -down-|> Salary
 Overtime -up-|> Salary

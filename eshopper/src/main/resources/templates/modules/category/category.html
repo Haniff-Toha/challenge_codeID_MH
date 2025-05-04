@@ -1,0 +1,32 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:with="http://www.thymeleaf.org/extras/with" layout:decorate="~{main_layout}" with:title="index">
+<th:block layout:fragment="content">
+    
+<head>
+    <meta charset="UTF-8">
+    <title>Categories</title>
+</head>
+<body>
+    <h3>Categories</h3>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Image</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="cat : ${categories}">
+                <td th:text="${cat.categoryId}"></td>
+                <td th:text="${cat.categoryName}"></td>
+                <td th:text="${cat.description}"></td>
+                <td>
+                    <img th:src="'data:image/png;base64,' + ${cat.base64Image}" width="100" alt="Category Image"/>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
