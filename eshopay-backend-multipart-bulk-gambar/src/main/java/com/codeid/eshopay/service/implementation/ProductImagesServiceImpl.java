@@ -101,7 +101,7 @@ public class ProductImagesServiceImpl implements ProductImagesService{
                     .fileName(randomFileName)
                     .fileSize(file.getSize())
                     .fileType(file.getContentType())
-                    .fileUri("http://localhost:8088/product/view/" + randomFileName) // or wherever it’s served
+                    .fileUri("http://localhost:8088/product/view/" + randomFileName) // sesuaikan saja yaa
                     .product(Product.builder().productId(productId).build())
                     .build();
 
