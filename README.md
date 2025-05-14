@@ -11,3 +11,4 @@
 9.    File Challenge Spring MVC 2 Day 7 [[Link File](https://github.com/Haniff-Toha/challenge_codeID_MH/tree/main/eshopper)]
 10.   File Challenge Springrest 1 Day 7 [[Link File](https://github.com/Haniff-Toha/challenge_codeID_MH/tree/main/eshopay-backend)]
 11.   File Challenge Springrest 2 - Multipart Day 8 [[Link File](https://github.com/Haniff-Toha/challenge_codeID_MH/tree/main/eshopay-backend-multipart)]
+12.   File Challenge Springrest 3 - Multipart bulk gambar Day 9 [[Link File](https://github.com/Haniff-Toha/challenge_codeID_MH/tree/main/eshopay-backend-multipart-bulk-gambar)]
