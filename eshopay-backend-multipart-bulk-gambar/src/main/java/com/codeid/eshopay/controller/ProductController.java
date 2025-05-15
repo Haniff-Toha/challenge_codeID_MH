@@ -19,7 +19,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 // import com.codeid.eshopay.model.dto.DependentBulkDto;
 import com.codeid.eshopay.model.dto.ProductDto;
-import com.codeid.eshopay.model.dto.ProductImagesBulkDto;
 import com.codeid.eshopay.model.enumeration.EnumStatus;
 import com.codeid.eshopay.model.response.ApiResponse;
 import com.codeid.eshopay.service.BaseCrudService;
