@@ -7,7 +7,6 @@ import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.codeid.eshopay.model.dto.ProductImagesBulkDto;
 import com.codeid.eshopay.model.dto.ProductImagesDto;
 import com.codeid.eshopay.model.entity.Product;
 import com.codeid.eshopay.model.entity.ProductImages;
