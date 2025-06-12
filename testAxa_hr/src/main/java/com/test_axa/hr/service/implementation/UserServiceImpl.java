@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.test_axa.hr.model.dto.AssignRoleUser;
 import com.test_axa.hr.model.dto.UserDto;
 import com.test_axa.hr.model.entity.Role;
 import com.test_axa.hr.model.entity.User;
@@ -20,10 +21,19 @@ public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
     private final RoleRepository roleRepository;
 
+    // Mapping Entity -> DTO
+    private UserDto mapToDTO(User user) {
+        return new UserDto(
+                user.getUserId(),
+                user.getUsername(),
+                user.getPassword(),
+                user.getRole().getRoleId());
+    }
+
     @Override
     public UserDto createUser(UserDto dto) {
         Role role = roleRepository.findById(dto.roleId())
-            .orElseThrow(() -> new RuntimeException("Role not found"));
+                .orElseThrow(() -> new RuntimeException("Role not found"));
 
         User user = new User();
         user.setUsername(dto.username());
@@ -37,27 +47,27 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserDto getUserById(Long id) {
         User user = userRepository.findById(id)
-            .orElseThrow(() -> new RuntimeException("User not found"));
+                .orElseThrow(() -> new RuntimeException("User not found"));
         return mapToDTO(user);
     }
 
     @Override
     public List<UserDto> getAllUsers() {
         return userRepository.findAll().stream()
-            .map(this::mapToDTO)
-            .toList();
+                .map(this::mapToDTO)
+                .toList();
     }
 
     @Override
     public UserDto updateUser(Long id, UserDto dto) {
         User user = userRepository.findById(id)
-            .orElseThrow(() -> new RuntimeException("User not found"));
+                .orElseThrow(() -> new RuntimeException("User not found"));
 
         user.setUsername(dto.username());
         user.setPassword(dto.password());
 
         Role role = roleRepository.findById(dto.roleId())
-            .orElseThrow(() -> new RuntimeException("Role not found"));
+                .orElseThrow(() -> new RuntimeException("Role not found"));
         user.setRole(role);
 
         User updated = userRepository.save(user);
@@ -69,14 +79,15 @@ public class UserServiceImpl implements UserService {
         userRepository.deleteById(id);
     }
 
-    // Mapping Entity -> DTO
-    private UserDto mapToDTO(User user) {
-        return new UserDto(
-            user.getUserId(),
-            user.getUsername(),
-            user.getPassword(),
-            user.getRole().getRoleId()
-        );
+    @Override
+    public void assignRoleToUser(AssignRoleUser request) {
+        User user = userRepository.findById(request.userId())
+                .orElseThrow(() -> new RuntimeException("User not found"));
+
+        Role role = roleRepository.findById(request.roleId())
+                .orElseThrow(() -> new RuntimeException("Role not found"));
+
+        user.setRole(role);
+        userRepository.save(user);
     }
 }
-
