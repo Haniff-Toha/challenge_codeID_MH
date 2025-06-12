@@ -1,6 +1,7 @@
 package com.test_axa.hr.model.dto;
 
 import io.micrometer.common.lang.NonNull;
+import jakarta.validation.constraints.NotBlank;
 
 public record UserDto(
     Long userId,
@@ -8,10 +9,10 @@ public record UserDto(
     @NonNull
     String username,
 
-    // @NotBlank(message = "Password is required")
+    @NotBlank(message = "Password is required")
     String password,
 
-    // @NotNull(message = "Role ID is required")
+    @NotBlank(message = "Role ID is required")
     Long roleId
 ) {}
 
