@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.test_axa.hr.model.dto.ApplyPermission;
 import com.test_axa.hr.model.dto.RoleDto;
 import com.test_axa.hr.service.RoleService;
 
@@ -51,5 +52,10 @@ public class RoleController {
         roleService.deleteRole(id);
         return ResponseEntity.noContent().build();
     }
-}
 
+    @PutMapping("/apply-permission")
+    public ResponseEntity<String> applyPermission(@RequestBody ApplyPermission request) {
+        roleService.applyPermissionToRole(request);
+        return ResponseEntity.ok("Permission applied to role successfully.");
+    }
+}
