@@ -12,3 +12,12 @@
 10.   File Challenge Springrest 1 Day 7 [[Link File](https://github.com/Haniff-Toha/challenge_codeID_MH/tree/main/eshopay-backend)]
 11.   File Challenge Springrest 2 - Multipart Day 8 [[Link File](https://github.com/Haniff-Toha/challenge_codeID_MH/tree/main/eshopay-backend-multipart)]
 12.   File Challenge Springrest 3 - Multipart bulk gambar Day 9 [[Link File](https://github.com/Haniff-Toha/challenge_codeID_MH/tree/main/eshopay-backend-multipart-bulk-gambar)]
+
+## Challenge untuk magang 
+### 1. Test Axa [[Link Folder](https://github.com/Haniff-Toha/challenge_codeID_MH/tree/main/testAxa_hr)]
+  1. Test API
+
+     ![Test API AXA](assets/axa_test.png)
+
+  2. Unit Test
+     ![Unit test AXA](assets/image.png)
